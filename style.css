@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Kotta+One&display=swap');
+
+:root {
+    --color1: #3d2fa9;
+    --color2: #ff7722;
+    --color3: #ff3d33;
+    --color4: #785f47;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Preloader start */
+
+.pre-loader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: 9999;
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #3d2fa9;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 400px;
+    z-index: 2;
+    color: #ffffff;
+}
+
+.count {
+    flex: 2;
+    text-align: right;
+    line-height: 1;
+    padding: 0 1em;
+}
+
+.copy {
+    flex: 6;
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.ml16 {
+    overflow: hidden;
+}
+
+.ml16 .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+.loader-bg {
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #3d2fa9;
+    z-index: -1;
+}
+
+.loader-2 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+/* Preloader end */
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.intro .header {
+    display: flex;
+    padding: 1em;
+}
+
+.intro .header h1 {
+    position: relative;
+    font-size: 22vw;
+    font-weight: 530;
+    text-transform: uppercase;
+    line-height: 1;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #e6e6e6;
+}
+
+p {
+    font-size: 1rem;
+
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.intro,
+.outro {
+    background-color: #000000;
+    perspective: 850px;
+    color: #e6e6e6;
+}
+
+.site-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.sticky-cards{
+    background-color: #000000;
+}
+
+.sticky-cards .card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 65%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    color: #e6e6e6;
+    transform-origin: center bottom;
+    will-change: transform;
+}
+
+.card .col{
+    flex: 1;
+    height: 100%;
+}
+
+.card .col:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.card .col:nth-child(2) {
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.card#card-1 {
+    background-color: var(--color1);
+    z-index: 6;
+}
+
+.card#card-2 {
+    background-color: var(--color2);
+    z-index: 5;
+}
+
+.card#card-3 {
+    background-color: var(--color3);
+    z-index: 4;
+}
+
+.card#card-4 {
+    background-color: var(--color4);
+    z-index: 3;
+}
+
+.card#card-5 {
+    background-color: var(--color1);
+    z-index: 2;
+}
+
+.card#card-6 {
+    background-color: var(--color2);
+    z-index: 1;
+}
+
+@media (max-width: 1000px) {
+    .sticky-cards .card {
+        width: calc(100% - 4rem);
+        height: 75%;
+        flex-direction: column;
+    }
+
+    .card .col{
+        width: 100%;
+    }
+}

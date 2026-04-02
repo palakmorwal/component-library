@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>component-2</title>
+    <link rel="stylesheet" href="c1.css">
+</head>
+<body>
+
+
+    <section class="use">
+
+        <div class="nav">
+            <i>rubylib</i>
+            <a href="index.html">home</a>
+            <a href="index.html">contact</a>
+        </div>
+
+        <div class="use-row">
+
+            <div class="use-text">
+                <h1>ABBREVIATION GUIDE</h1>
+                <br>
+                <p>Abbreviation guide can be used to organise and give more information about the abbreviated terms efficiently. </p>
+            </div>
+
+            <img src="Group 2.png" alt="">
+
+        </div>
+
+    </section>
+
+
+    <section class="int">
+
+        <div class="int-row"></div>
+
+        <h1>INTERACTION</h1>
+        <br>
+        <p>This guide is used as supporting information, and can be interactive depending on the content it's paired with or the context it's in.
+        <br><br>For example, it can be used in any online library apps where certain abbreviated terms have a small annotation giving the full form of that particular term.</p> <br><br>
+
+        <img src="Group 2.1.png" alt="">
+
+        </div>
+    </section>
+
+
+    <section class="code">
+        <br><br><br><br><br>
+
+        <h1>CODE PREVIEW</h1>
+        <br><br><br>
+        <div class="preview-card">
+
+        <!-- Tab bar -->
+        <div class="tab-bar">
+            <button class="tab active" onclick="switchTab('preview', this)">Preview</button>
+            <button class="tab" onclick="switchTab('code', this)">Code</button>
+            <button class="copy-btn" id="copy-btn" onclick="copyCode()">Copy</button>
+        </div>
+
+        <!-- Preview panel -->
+        <div id="panel-preview" class="panel">
+            <ruby class="demo-ruby">
+                <p>
+                The report was reviewed by the <ruby>CEO<rt>chief executive officer</rt></ruby> before being passed to the <ruby>CFO<rt>chief financial officer</rt></ruby>and the<ruby>BoD<rt>board of directors</rt></ruby>for final sign-off. All figures were verified against<ruby>GAAP<rt>generally accepted accounting principles</rt></ruby>
+                standards.
+                </p>
+            </ruby>
+        </div>
+
+        <!-- Code panel -->
+        <div id="panel-code" class="panel hidden">
+             <pre id="code-block">&lt;p&gt;
+  The report was reviewed by the
+  &lt;ruby&gt;CEO&lt;rt&gt;chief executive officer&lt;/rt&gt;&lt;/ruby&gt;
+  before being passed to the
+  &lt;ruby&gt;CFO&lt;rt&gt;chief financial officer&lt;/rt&gt;&lt;/ruby&gt;
+  and the
+  &lt;ruby&gt;BoD&lt;rt&gt;board of directors&lt;/rt&gt;&lt;/ruby&gt;
+  for final sign-off. All figures were verified against
+  &lt;ruby&gt;GAAP&lt;rt&gt;generally accepted accounting principles&lt;/rt&gt;&lt;/ruby&gt;
+  standards.
+&lt;/p&gt;</pre>
+        </div>
+
+        </div>
+    </section>
+
+    <script>
+        function switchTab(tab, clickedTab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            clickedTab.classList.add('active');
+            document.getElementById('panel-preview').classList.toggle('hidden', tab !== 'preview');
+            document.getElementById('panel-code').classList.toggle('hidden', tab !== 'code');
+            document.getElementById('copy-btn').style.visibility = tab === 'code' ? 'visible' : 'hidden';
+        }
+
+        function copyCode() {
+            const code = document.getElementById('code-block').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                const btn = document.getElementById('copy-btn');
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        document.getElementById('copy-btn').style.visibility = 'hidden';
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact — rubylib</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <div class="nav">
+        <i>rubylib</i>
+        <a href="index.html">home</a>
+        <a href="contact.html">contact</a>
+    </div>
+
+    <section class="hero">
+        <ruby>contact<br><br><rt>get in touch</rt></ruby>
+    </section>
+    <br><br><br>
+
+    <section class="form-section">
+
+        <div class="form-row">
+            <label for="name">name</label>
+            <input type="text" id="name" placeholder="your name">
+        </div>
+
+        <div class="form-row">
+            <label for="email">email</label>
+            <input type="email" id="email" placeholder="your@email.com">
+        </div>
+
+        <div class="form-row">
+            <label for="message">message</label>
+            <textarea id="message" rows="3" placeholder="what's on your mind?"></textarea>
+        </div>
+
+        <button onclick="handleSubmit()">send</button>
+
+        <p class="confirm" id="confirm"></p>
+
+    </section>
+
+    <script>
+        function handleSubmit() {
+    const name    = document.getElementById('name').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const confirm = document.getElementById('confirm');
+
+    if (!name || !email || !message) {
+        confirm.textContent = 'please fill in all fields.';
+        confirm.style.color = '#e00';
+        return;
+    }
+
+    confirm.textContent = 'message sent — thanks, ' + name + '.';
+    confirm.style.color = '#888';
+
+    document.getElementById('name').value    = '';
+    document.getElementById('email').value   = '';
+    document.getElementById('message').value = '';
+}
+    </script>
+
+    <script src="contact.js"></script>
+
+</body>
+</html>

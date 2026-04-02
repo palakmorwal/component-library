@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>component-1</title>
+    <link rel="stylesheet" href="c1.css">
+</head>
+<body>
+
+
+    <section class="use">
+
+        <div class="nav">
+            <i>rubylib</i>
+            <a href="index.html">home</a>
+            <a href="index.html">contact</a>
+        </div>
+
+        <div class="use-row">
+
+            <div class="use-text">
+                <h1>TRANSLATOR</h1>
+                <br>
+                <p>The translator component allows users to translate text between different languages, providing a seamless way to communicate across linguistic barriers.</p>
+            </div>
+
+            <img src="Group 4.png" alt="">
+
+        </div>
+
+    </section>
+
+
+    <section class="int">
+
+        <div class="int-row"></div>
+
+        <h1>INTERACTION</h1>
+        <br>
+        <p>This guide is used as supporting information, and can be interactive depending on the content it's paired with or the context it's in.
+        <br><br>For example, it can be used in a language learning app, where users can click on a word to see its pronunciation guide. It can also be used in a dictionary app, where users can click on a word to see its pronunciation guide along with its definition and usage examples.</p> <br><br>
+
+        <img src="Group 4.1.png" alt="">
+
+        </div>
+    </section>
+
+
+    <section class="code">
+        <br><br><br><br><br>
+
+        <h1>CODE PREVIEW</h1>
+        <br><br><br>
+        <div class="preview-card">
+
+        <!-- Tab bar -->
+        <div class="tab-bar">
+            <button class="tab active" onclick="switchTab('preview', this)">Preview</button>
+            <button class="tab" onclick="switchTab('code', this)">Code</button>
+            <button class="copy-btn" id="copy-btn" onclick="copyCode()">Copy</button>
+        </div>
+
+        <!-- Preview panel -->
+        <div id="panel-preview" class="panel">
+            <ruby class="demo-ruby">
+            AMBIGUOUS
+            <rp>(</rp><rt>amˈbiɡyəwəs</rt><rp>)</rp>
+            </ruby>
+        </div>
+
+        <!-- Code panel -->
+        <div id="panel-code" class="panel hidden">
+            <pre id="code-block">
+            &lt;ruby&gt;
+            AMBIGUOUS
+            &lt;rp&gt;(&lt;/rp&gt;
+            &lt;rt&gt;amˈbiɡyəwəs&lt;/rt&gt;
+            &lt;rp&gt;)&lt;/rp&gt;
+            &lt;/ruby&gt;</pre>
+        </div>
+
+        </div>
+    </section>
+
+    <script>
+        function switchTab(tab, clickedTab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            clickedTab.classList.add('active');
+            document.getElementById('panel-preview').classList.toggle('hidden', tab !== 'preview');
+            document.getElementById('panel-code').classList.toggle('hidden', tab !== 'code');
+            document.getElementById('copy-btn').style.visibility = tab === 'code' ? 'visible' : 'hidden';
+        }
+
+        function copyCode() {
+            const code = document.getElementById('code-block').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                const btn = document.getElementById('copy-btn');
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        document.getElementById('copy-btn').style.visibility = 'hidden';
+    </script>
+
+</body>
+</html>

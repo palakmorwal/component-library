@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 2em 3em;
+}
+
+/* ── Nav ── */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5em;
+    font-size: 16px;
+}
+
+.nav a {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+/* ── Hero ── */
+.hero {
+    margin-bottom: 2em;
+}
+
+.hero ruby {
+    font-size: 4rem;
+    font-family: Boldonse, sans-serif;
+}
+
+.hero rt {
+    font-size: 0.3em;
+    font-weight: normal;
+    color: #888;
+    letter-spacing: 0.05em;
+}
+
+/* ── About blurb ── */
+.about {
+    margin-bottom: 4em;
+    max-width: 520px;
+}
+
+.about p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.about code {
+    font-family: monospace;
+    font-size: 0.95em;
+    color: #222;
+}
+
+/* ── Form ── */
+.form-section {
+    max-width: 520px;
+    height: 100svh;
+    margin-top: 5svh;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.75em;
+    gap: 6px;
+}
+
+label {
+    font-size: 0.85rem;
+    color: #fffefe;
+    letter-spacing: 0.05em;
+}
+
+input, textarea {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0;
+    font-size: 1rem;
+    color: #222;
+    outline: none;
+    resize: none;
+    background: transparent;
+}
+
+input:focus, textarea:focus {
+    border-bottom-color: #222;
+}
+
+button {
+    background: #3d2fa9;
+    color: #fff;
+    border: none;
+    padding: 12px 32px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+    margin-top: 0.5em;
+}
+
+button:hover {
+    opacity: 0.75;
+}
+
+/* ── Confirmation ── */
+.confirm {
+    margin-top: 1em;
+    font-size: 0.9rem;
+    color: #888;
+}

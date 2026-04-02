@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+section {
+    width: 100%;
+    min-height: 90svh;
+    padding: 2em 3em;
+    background-color: #ffffff;
+    color: #222;
+}
+
+/* ── Nav ── */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3em;
+    font-size: 16px;
+}
+
+.nav a {
+    text-decoration: underline;
+    color: #222;
+}
+
+/* ── Side by side row ── */
+.use-row {
+    display: flex; 
+    align-items: center;
+    gap: 2em;
+}
+
+.use-text {
+    flex: 1;
+}
+
+.use-row img {
+    width: 30%;
+    object-fit: contain;
+}
+
+.int-row img{
+    width: 60%;
+    object-fit: contain;
+}
+
+
+p {
+    font-size: 1.25rem;
+    margin-top: 1em;
+    width: 600px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: Boldonse, sans-serif;
+}
+
+
+
+/* ── Card wrapper ── */
+.preview-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    max-width: 900px;   /* was 640px */
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ── Tab bar ── */
+.tab-bar {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0 8px;
+}
+
+.tab {
+    padding: 10px 16px;
+    font-size: 13px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #888;
+    margin-bottom: -1px;
+}
+
+.tab.active {
+    color: #111;
+    border-bottom-color: #111;
+    font-weight: 500;
+}
+
+.tab:hover:not(.active) {
+    color: #444;
+}
+
+/* ── Copy button ── */
+.copy-btn {
+    margin-left: auto;
+    font-size: 12px;
+    padding: 4px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    background: #fff;
+    border: 2px solid #ddd;
+    color: #666;
+}
+
+.copy-btn:hover { color: #111; border-color: #aaa; }
+.copy-btn.copied { color: #16a34a; border-color: #16a34a; }
+
+/* ── Panels ── */
+.panel {
+    display: block;
+}
+
+.panel.hidden {
+    display: none;
+}
+
+/* ── Preview panel ── */
+#panel-preview {
+    padding: 4rem;      /* was 3rem */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ECEFEB;
+    min-height: 250px;  /* was 140px */
+}
+
+/* The demo element being showcased */
+.demo-ruby {
+    font-size: 2rem;
+    color: #000000;
+}
+
+.demo-ruby rt {
+    font-size: 0.5em;
+    color: #000000;
+}
+
+/* ── Code panel ── */
+#panel-code {
+    position: relative;
+}
+
+pre {
+    padding: 1.25rem;
+    background: #f8f8f8;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-x: auto;
+    color: #222;
+}
